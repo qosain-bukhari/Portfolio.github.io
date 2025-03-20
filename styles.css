@@ -1810,20 +1810,21 @@ header {
 }
 
 /* For small screens - align skill cards to the left */
-@media screen and (max-width: 576px) {
+@media screen and (min-width: 350px) and (max-width: 576px) {
     .skills-grid {
         display: flex;
         flex-direction: column;
-        align-items: flex-start; /* Align to the left */
+        align-items: flex-start; /* Align cards to the left */
         justify-content: flex-start;
+        padding-left: 10px; /* Add a slight padding from the left edge */
     }
     
     .skill-card {
-        width: 90%; /* Wider cards to use more space */
-        margin-right: 0; /* Remove right margin */
-        margin-left: 0; /* Remove left margin */
-        margin-bottom: 15px; /* Space between cards */
-        padding: 15px; /* Reduced padding as in your existing CSS */
+        width: 95%; /* Almost full width */
+        margin: 10px 0; /* Vertical spacing between cards */
+        margin-right: auto; /* Push cards to the left */
+        margin-left: 0; /* Ensure no left margin */
+        padding: 15px; /* Maintain existing padding */
     }
     
     /* Ensure skill bars display correctly */
@@ -1837,7 +1838,7 @@ header {
     
     /* Container adjustments to ensure left alignment */
     .category-skills {
-        padding-left: 10px; /* Add a little padding on the left */
+        padding: 0 10px; /* Add some spacing from the container edge */
     }
 }
 
