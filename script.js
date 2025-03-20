@@ -162,5 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Add cursor pointer to indicate it's clickable
         logo.style.cursor = 'pointer';
-}
+    }
+    
 });

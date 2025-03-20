@@ -1809,39 +1809,47 @@ header {
     }
 }
 
+/* For small screens - align skill cards to the left */
 @media screen and (max-width: 576px) {
-    .resume-section, .skills-showcase {
-        padding: 40px 15px;  /* Further reduced padding */
+    .skills-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align to the left */
+        justify-content: flex-start;
     }
-
-    .section-Resume h2 {
-        font-size: 24px;  /* Further reduced */
-    }
-
-    .timeline-content {
-        padding: 15px;  /* Further reduced */
-    }
-
+    
     .skill-card {
-        padding: 15px;  /* Further reduced */
+        width: 90%; /* Wider cards to use more space */
+        margin-right: 0; /* Remove right margin */
+        margin-left: 0; /* Remove left margin */
+        margin-bottom: 15px; /* Space between cards */
+        padding: 15px; /* Reduced padding as in your existing CSS */
+    }
+    
+    /* Ensure skill bars display correctly */
+    .skill-level {
+        width: 100%;
+    }
+    
+    .skill-bar {
+        width: 100%;
+    }
+    
+    /* Container adjustments to ensure left alignment */
+    .category-skills {
+        padding-left: 10px; /* Add a little padding on the left */
     }
 }
 
+/* Very small screens adjustments */
 @media screen and (max-width: 350px) {
-    .section-Resume h2 {
-        font-size: 22px;  /* Smallest size */
+    .skill-card {
+        width: 95%; /* Even wider on very small screens */
+        padding: 12px; /* Further reduced padding */
     }
-
-    .timeline-content h4 {
-        font-size: 16px;  /* Smallest size */
-    }
-
+    
     .skill-name {
-        font-size: 15px;  /* Smallest size */
-    }
-
-    .description {
-        font-size: 0.85rem;  /* Smallest size */
+        font-size: 15px; /* Smallest size as in your existing CSS */
     }
 }
 

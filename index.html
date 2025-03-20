@@ -809,33 +809,45 @@
 @media (max-width: 786px) {
     .availability-popup {
         bottom: 10px;
-        left:25%; /* Center horizontally */
+        left: 20%; /* Center horizontally */
         transform: translateX(-50%); /* Fix horizontal centering */
         width: 85%; /* Reduce width for small screens */
         max-width: 300px; /* Limit maximum width on small screens */
     }
 
     .popup-content {
-        padding: 10px; /* Reduce padding for smaller screens */
+        padding: 12px; /* Slightly more padding */
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center all text */
     }
 
     .popup-image {
-        width: 45px; /* Smaller profile image */
-        height: 45px;
-        margin-right: 10px;
+        width: 50px; /* Slightly larger profile image */
+        height: 50px;
+        margin-right: 0;
+        margin-bottom: 10px; /* Add space below image */
+    }
+
+    .popup-info {
+        width: 100%; /* Full width */
+        margin-bottom: 12px; /* Space before button */
     }
 
     .popup-title {
-        font-size: 14px; /* Smaller font size */
+        font-size: 15px; /* Slightly larger font size */
     }
 
     .popup-status {
         font-size: 12px; /* Smaller status text */
+        justify-content: center; /* Center the status indicator and text */
     }
 
     .popup-button {
+        width: 80%; /* Slightly narrower button */
         padding: 8px 15px; /* Smaller button */
         font-size: 13px;
+        margin-left: 0; /* Remove left margin */
     }
 }
 
@@ -846,8 +858,8 @@
     }
     
     .popup-image {
-        width: 40px; /* Even smaller profile image */
-        height: 40px;
+        width: 45px; /* Slightly smaller image for very small screens */
+        height: 45px;
     }
 }
 </style>
