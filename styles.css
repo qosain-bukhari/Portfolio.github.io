@@ -2554,3 +2554,140 @@ header {
     margin-top: -30px; /* Negative margin to pull it up toward resume section */
 }
 
+.expertise-showcase {
+    padding: 80px 0;
+    background-color: var(--light-bg-color, #eff5f9);
+    position: relative;
+}
+
+.expertise-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.expertise-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.expertise-badge {
+    background: linear-gradient(135deg, var(--primary-color, #4a00e0), var(--secondary-color, #8e2de2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.expertise-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-color, #333);
+}
+
+.expertise-subtitle {
+    color: var(--text-light, #777);
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.specialties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.specialty-card {
+    background-color: var(--white, #fff);
+    border-radius: 15px;
+    padding: 40px 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.specialty-card:hover {
+    background: #0080ff;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.specialty-card:hover .specialty-name{
+    color: #fff;
+}
+.specialty-card:hover .specialty-description{
+    color: #fff;
+}
+
+.specialty-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color, #4a00e0), var(--secondary-color, #8e2de2));
+    color: #fff;
+    border-radius: 50%;
+    font-size: 28px;
+}
+
+.specialty-name {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-color, #333);
+}
+
+.specialty-description {
+    color: var(--text-light, #777);
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .specialties-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .expertise-title {
+        font-size: 32px;
+    }
+    
+    .specialty-card {
+        padding: 30px 20px;
+    }
+    
+    .specialty-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    
+    .specialty-name {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .specialties-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .expertise-heading {
+        margin-bottom: 40px;
+    }
+    
+    .expertise-title {
+        font-size: 28px;
+    }
+}
+
