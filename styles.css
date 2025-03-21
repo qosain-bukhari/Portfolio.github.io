@@ -1601,7 +1601,17 @@ header {
 /* Large Mobile Styles (576px to 767px) */
 @media screen and (max-width: 767px) {
     .hero {
-        padding: 6rem 0 2rem;
+        padding: 6rem 0 1rem; /* Reduced bottom padding to reduce space */
+    }
+    
+    #resume {
+        padding-top: 20px; /* Less padding on mobile */
+        margin-top: -20px; /* Pull up slightly on mobile */
+    }
+    
+    #skills {
+        padding-top: 20px;
+        margin-top: -20px;
     }
     
     .name {
@@ -1624,12 +1634,36 @@ header {
     .hero-image img {
         max-width: 70%;
     }
+    
+    /* Reduce spacing in resume section */
+    .section-Resume {
+        margin-bottom: 20px;
+    }
+    
+    .resume-tabs {
+        margin-bottom: 20px;
+    }
+    
+    /* Further reduce spacing in skills section */
+    .section-skills {
+        margin-bottom: 20px;
+    }
 }
 
 /* Small Mobile Styles (480px to 575px) */
 @media screen and (max-width: 575px) {
     .hero {
-        padding: 5rem 0 1.5rem;
+        padding: 5rem 0 0.5rem; /* Reduced bottom padding even more */
+    }
+    
+    #resume {
+        padding-top: 15px; /* Minimal padding on smaller mobile */
+        margin-top: -15px; /* Pull up more on smaller screens */
+    }
+    
+    #skills {
+        padding-top: 15px;
+        margin-top: -15px;
     }
     
     .name {
@@ -1648,6 +1682,7 @@ header {
         flex-direction: column;
         align-items: center;
         gap: 15px;
+        margin-bottom: 15px; /* Reduce bottom margin */
     }
     
     .cta-buttons a {
@@ -1658,7 +1693,7 @@ header {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 15px; /* Reduced margin */
     }
     
     .social-icons a {
@@ -1668,12 +1703,36 @@ header {
     .hero-image img {
         max-width: 80%;
     }
+    
+    /* Further reduce spacing in resume section */
+    .section-Resume h2 {
+        margin-bottom: 10px;
+    }
+    
+    .resume-tabs {
+        margin-bottom: 15px;
+    }
+    
+    /* Further reduce spacing in skills section */
+    .section-skills h2 {
+        margin-bottom: 10px;
+    }
 }
 
 /* Extra Small Mobile Styles (400px and below) */
 @media screen and (max-width: 400px) {
     .hero {
-        padding: 5rem 0 1rem;
+        padding: 5rem 0 0rem; /* No bottom padding */
+    }
+    
+    #resume {
+        padding-top: 10px; /* Minimal padding */
+        margin-top: -10px;
+    }
+    
+    #skills {
+        padding-top: 10px;
+        margin-top: -10px;
     }
     
     .Hero_Section {
@@ -1694,6 +1753,7 @@ header {
     
     .description {
         font-size: 0.9rem;
+        margin-bottom: 10px; /* Reduce margin */
     }
     
     .social-icons a {
@@ -1704,12 +1764,32 @@ header {
     .hero-image img {
         max-width: 85%;
     }
+    
+    /* Minimal spacing for resume section */
+    .resume-section {
+        padding: 10px 0;
+    }
+    
+    /* Minimal spacing for skills section */
+    .skills-section {
+        padding: 10px 0;
+    }
 }
 
 /* Ultra Small Screens (320px and below) */
 @media screen and (max-width: 320px) {
     .hero {
-        padding: 4.5rem 0 1rem;
+        padding: 4.5rem 0 0rem; /* No bottom padding */
+    }
+    
+    #resume {
+        padding-top: 5px; /* Almost no padding */
+        margin-top: -5px;
+    }
+    
+    #skills {
+        padding-top: 5px;
+        margin-top: -5px;
     }
     
     .name {
@@ -1722,16 +1802,18 @@ header {
     
     .hello-text {
         font-size: 0.9rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.3rem; /* Less margin */
     }
     
     .description {
         font-size: 0.8rem;
-        margin-top: 0.5rem;
+        margin-top: 0.3rem; /* Less margin */
+        margin-bottom: 8px; /* Reduced further */
     }
     
     .cta-buttons {
-        margin-top: 1rem;
+        margin-top: 0.5rem; /* Less margin */
+        margin-bottom: 10px; /* Reduced */
     }
     
     .cta-buttons a {
@@ -2459,5 +2541,16 @@ header {
     .footer-logo .name {
         font-size: 95%;
     }
+}
+
+/* General adjustments to reduce spacing between sections */
+#resume {
+    padding-top: 30px; /* Reduced padding to move resume higher */
+    margin-top: -30px; /* Negative margin to pull it up toward hero section */
+}
+
+#skills {
+    padding-top: 30px; /* Reduced padding to move skills higher */
+    margin-top: -30px; /* Negative margin to pull it up toward resume section */
 }
 

@@ -865,57 +865,82 @@
 </style>
 
 <script>
-// Self-contained script for availability popup
+// Self-contained script for availability popup that waits for hero section to load
 document.addEventListener('DOMContentLoaded', function() {
     const popup = document.getElementById('availability-popup');
     const closeButton = popup.querySelector('.popup-close');
     const hireButton = popup.querySelector('.popup-button');
+    const heroSection = document.getElementById('home');
     
-    // Show popup after 3 seconds
-    setTimeout(function() {
-        popup.classList.add('show');
-    }, 3000);
-    
-    // Close popup when clicking the X
-    closeButton.addEventListener('click', function() {
-        popup.classList.remove('show');
+    // Function to check if element is fully loaded with images
+    function isElementLoaded(element) {
+        // Get all images within the element
+        const images = element.querySelectorAll('img');
         
-        // Store in localStorage that user closed the popup
-        localStorage.setItem('popupClosed', 'true');
-    });
-    
-    // Handle hire button click
-    hireButton.addEventListener('click', function(e) {
-        e.preventDefault();
+        // If no images, consider it loaded
+        if (images.length === 0) return true;
         
-        // Smooth scroll to contact section
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-            
-            // Close popup after clicking hire
-            setTimeout(function() {
-                popup.classList.remove('show');
-            }, 500);
-        }
-    });
-    
-    // Check if user previously closed the popup
-    if (localStorage.getItem('popupClosed') === 'true') {
-        // Don't show popup if user closed it before
-        // Reset this after 1 day
-        const lastClosed = localStorage.getItem('popupClosedTime');
-        if (lastClosed) {
-            const dayInMs = 24 * 60 * 60 * 1000;
-            if (Date.now() - parseInt(lastClosed) > dayInMs) {
-                localStorage.removeItem('popupClosed');
-                localStorage.removeItem('popupClosedTime');
+        // Check if all images are loaded
+        for (let img of images) {
+            if (!img.complete) {
+                return false;
             }
+        }
+        
+        return true;
+    }
+    
+    // Function to show popup after hero section loads
+    function checkHeroAndShowPopup() {
+        if (isElementLoaded(heroSection)) {
+            // Hero section is loaded, show popup after a short delay
+            setTimeout(function() {
+                // Check if user previously closed the popup
+                if (localStorage.getItem('popupClosed') !== 'true') {
+                    popup.classList.add('show');
+                    console.log('Showing popup after hero loaded');
+                }
+            }, 1500); // 1.5 second delay after hero loads
         } else {
-            localStorage.setItem('popupClosedTime', Date.now().toString());
+            // Check again in a moment
+            setTimeout(checkHeroAndShowPopup, 200);
         }
     }
     
+    // Start checking if hero section is loaded
+    if (heroSection) {
+        checkHeroAndShowPopup();
+    }
+    
+    // Close popup when clicking the X
+    if (closeButton) {
+        closeButton.addEventListener('click', function() {
+            popup.classList.remove('show');
+            console.log('Popup closed');
+            
+            // Store in localStorage that user closed the popup
+            localStorage.setItem('popupClosed', 'true');
+            localStorage.setItem('popupClosedTime', Date.now().toString());
+        });
+    }
+    
+    // Handle hire button click
+    if (hireButton) {
+        hireButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Smooth scroll to contact section
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+                
+                // Close popup after clicking hire
+                setTimeout(function() {
+                    popup.classList.remove('show');
+                }, 500);
+            }
+        });
+    }
 });
 </script>
 
