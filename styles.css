@@ -114,7 +114,7 @@ header {
     color: #29B0DE;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow:  -20px -20px 60px #e3e8eb;
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 600;
@@ -532,10 +532,11 @@ header {
 }
 
 .timeline-content {
-    background-color: #fff;
+    background-color:linear-gradient(135deg, #e4eaed, #f9fdff);
     border-radius: 15px;
     padding: 35px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 
+                  -20px -20px 60px #ffffff;
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.03);
     position: relative;
@@ -717,10 +718,11 @@ header {
 
 /* Simple Skill Card */
 .skill-card {
-    background-color: white;
+  background-color: #fff;
     border-radius: 10px;
         padding: 25px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
     transition: all 0.3s ease;
     border: 1px solid #eee;
 }
@@ -2030,10 +2032,11 @@ header {
 }
 
 .project-card {
-    background: white;
+    background:linear-gradient(180deg #e4eaed #fff);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: 20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform: translateY(30px);
     opacity: 0;
@@ -2604,10 +2607,11 @@ header {
 }
 
 .specialty-card {
-    background-color: var(--white, #fff);
     border-radius: 15px;
     padding: 40px 30px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    background-color:linear-gradient(180deg, #e4eaed, #f9fdff);
+    box-shadow: 20px 20px 60px #bebebe,
+                  -20px -20px 60px #ffffff;
     transition: all 0.3s ease;
     text-align: center;
 }
